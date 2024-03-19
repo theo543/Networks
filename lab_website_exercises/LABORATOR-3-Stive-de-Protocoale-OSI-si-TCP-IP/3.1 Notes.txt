@@ -1,0 +1,46 @@
+Part 1
+
+Step 2
+The web browser is now displaying a page saying "Web Server - You have successfully accessed the home page for the Web Server."
+
+Step 3
+b)
+"Layer 7: HTTP"
+"1. The HTTP client sends a HTTP request to the server."
+c)
+Dst Port: 80
+d)
+Dest. Ip: 192.168.1.254
+e)
+It displays the Ethernet header - source and destination MAC address.
+f)
+IP: The source IP and destination IP, associated with Layer 3.
+TCP: The source port and destination port, associated with Layer 4.
+HTTP: The host listed is www.osi.local, this would be associated with Layer 7.
+h)
+The source and destination ports, IPs, and MACs have been swapped.
+i)
+"Connection: close"
+j)
+There are only two tabs, because this device is not sending back a HTTP response (it is the client), so there is no Outbound PDU Details tab. 
+
+Part 2
+
+Step 1
+b)
+The additional Event Types are DNS, ARP and TCP.
+d)
+www.osi.local
+e) 
+Web Client
+192.168.1.254
+f)
+4. The TCP connection is successful.
+5. The device sets the connection state to ESTABLISHED.
+g)
+The purpose is closing the connection (setting the state to CLOSED).
+
+Challenge
+
+The Web Server is listening on TCP port 80 for HTTP requests.
+The Web Server is listening on UDP port 53 for DNS requests.
