@@ -1,0 +1,50 @@
+Step 1
+Routers, Switches, Hubs, Wireless Devices, Security, WAN Emulation
+There are 15 end devices.
+There are 13 intermediary devices.
+8 end devices are not desktop computers, assuming laptops do not count as desktop computers.
+There are 4 connection types - serial, coaxial, copper, and wireless.
+
+Step 2
+a)
+In the client-server model, there are server and client devices.
+A server device provides services to client devices, receiving inbound connections.
+A client device requests services from server devices, initiating outbound connections.
+The client-server model fits protocols such as HTTP(S), where client request resources from servers, but not peer-to-peer protocols.
+b)
+Functions of intermediary devices:
+- Send and receive packets across different networks, perform Network Address Translation to allow hosts to connect without a public IP address - routers.
+- Send and receive frames within one network - switches.
+- Filter connections to block unauthorized traffic - hardware firewalls.
+- Provide wireless connection to a network - Wireless Access Point, home routers are usually also Wireless Access Points
+- Transmit and receive data through an analog audio connection - modems.
+c)
+Criteria to choose a media type:
+- Bandwidth - how much data it can transmit at once?
+- Latency - how quickly it can transmit data?
+- Price - how much does it cost?
+- Is supported by the existing devices in the network?
+- Ease of Installation - How easy is it to install?
+- Resilience - What is the expected time before this connection breaks? (if it breaks a lot, the network will need more redundancy, may increase costs)
+
+Step 3
+a)
+A LAN is a small network which only connects hosts within one location, such as a company building, a home office, a university, etc.
+A WAN is a large network which extends over a large area, such as multiple company buildings, a neighborhood, or even an entire city.
+The Internet is a WAN.
+b)
+2 - The Internet, and the Central + Branch office, since they are connected through an intranet (unlike the Home Office LAN, which has to go through the Internet to connect to the company)
+c)
+3 - The Home Office, Central, and Branch.
+d)
+The Internet is a massive network which connects almost every other network on Earth. It allows quick access servers on distant networks, even on the other side of the Earth.
+e)
+- Mobile Data, i.e. 5G, 4G, etc.
+- Dial-Up connection, through a phone line.
+- Satellite connection, using an antenna
+- Optic fiber broadband connection
+f)
+Businesses generally use the same technologies as home users to connect to the internet, but there are some differences:
+- Large businesses may have a dedicated, high-capacity connection to their ISP.
+- Businesses may purchase public IPv4 IPs to be able to host public Internet services. Home connections often do not have public IPs (if Carrier-Grade NAT is used), or have dynamic IPs (which require dynamic DNS to host a service from).
+- Small businesses use a shared network, which many businesses share and pay for, to reduce their costs. These connections will likely have worse bandwidth, but small businesses may not need more.
