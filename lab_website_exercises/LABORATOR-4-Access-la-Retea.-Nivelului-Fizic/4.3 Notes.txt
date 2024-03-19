@@ -1,0 +1,58 @@
+Part 1
+Step 1
+IPv4 Address: 192.168.1.128
+Default Gateway: 192.168.1.1
+Step 2
+192.168.1.1
+Step 3
+[my public ip], Bucharest, Digi
+Step 4
+It is a wireless connection.
+The router is attached to the wall.
+There is a cable going into a panel next to the router.
+
+Part 2
+Step 2
+It is a fiber connection. The cable goes into a panel in my apartment.
+10.0.0.1
+
+Step 3
+2nd Hop Address: 10.0.0.1
+Private IP.
+
+Step 5
+c) 10.110.178.133
+d) rur02.monterey.ca.sfba.comcast.net GigabitEthernet0/0
+e) 10.139.198.129
+f) rur01.monterey.ca.sfba.comcast.net GigabitEthernet0/0
+g) Those IPs are used for another connection, probably the connection to the next ISP server in the chain. Traceroute can't know about those IPs.
+h) Traceroute only shows private IPs, then IPs from other ISPs.
+
+Step 6
+a) None.
+d)
+5 rar01.santaclara.ca.sfba.comcast.net GigabitEthernet0/0 10.151.78.177
+6  cs03.sunnyvale.ca.ibone.comcast.net GigabitEthernet0/0 10.110.41.121
+7  cr12.sunnyvale.ca.ibone.comcast.net GigabitEthernet0/0 10.110.46.30
+8 cr01.9greatoaks.ca.ibone.comcast.net GigabitEthernet0/0 10.110.37.178
+9 pe11.9greatoaks.ca.ibone.comcast.net GigabitEthernet0/0 10.110.32.246
+e)
+greatoaks.calibone
+pe11.9greatoaks.ca.ibone.comcast.net
+GigabitEthernet1/0
+172.16.69.142
+Step 7
+d) 10th hop is 172.16.69.141, the interface is GigabitEthernet0/0.
+Step 8
+Internet2's backbone has a 100 Gbit/s speed.
+Step 9
+c) 172.16.20.255 has interface GigabitEthernet0/0.
+Step 10
+a) JUPITER (active), HKA (proposal), SEA-US (active)
+b) SEA-US
+c) Makaha
+d) SEA-US, JUS, HIFN, SAPL
+g) There are various answers, 40-90 km, 50 km, 60-80 km, 100 km, ...
+i) 172.16.47.134 - GigabitEthernet0/0
+Step 11
+172.30.205.29 - GigabitEthernet0/0
