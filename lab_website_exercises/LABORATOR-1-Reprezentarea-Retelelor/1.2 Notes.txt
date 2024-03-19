@@ -1,0 +1,6 @@
+Part 1
+The subcategories are Routers, Switches, Hubs, Wireless Devices, Security, and WAN Emulation.
+Part 2
+d) ALS2 has wired connections to ALS1, WebServer, and Access_Point.
+e) Access_Point is connected to Laptop_1.
+f) The laptop is on the table.
