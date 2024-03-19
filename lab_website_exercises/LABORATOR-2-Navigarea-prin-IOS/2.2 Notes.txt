@@ -1,0 +1,19 @@
+Part 1
+3)
+I can verify the passwords by closing the connection, then attempting to connect again and enter EXEC mode.
+If the passwords are configured correctly, I should have to enter 'cisco' to connect at all, and 'class' to enter EXEC mode.
+
+5)
+The configuration can be saved with the command 'copy running-config startup-config' from EXEC mode.
+
+Part 2
+2)
+I could not ping the switch. This is likely because the switch has not been configured with an IP address yet.
+
+Part 3
+1)
+Switches do not need an IP address to function. However, if they do not have an IP address, they cannot be managed remotely over the network. Configuring them with an IP address allows remote configuration and monitoring.
+The 'no shutdown' command is used to enable the VLAN interface. This will allow remote connections to the switch using the IP we just assigned to its VLAN interface.
+
+4)
+copy running-config startup-config
