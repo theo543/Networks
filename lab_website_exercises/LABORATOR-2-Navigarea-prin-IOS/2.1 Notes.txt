@@ -1,0 +1,30 @@
+Part 1
+Step 2
+b) The connection is set to 9600 bits per seconds.
+c) The prompt is "S1>"
+Step 3
+a) connect
+b) t? telnet, terminal, traceroute, te? telnet, terminal
+
+Part 2
+Step 1
+a) enable - Turn on privileged commands
+b) en[Tab] -> enable, te[Tab] does nothing because it is ambiguous
+c) S1#
+d) There are now four commands starting with 'C'.
+Step 2
+a) Configuring from terminal, memory, or network [terminal]?
+b) S1(config)#
+
+Part 3
+Step 1
+a) The current time is displayed. The year is 1993.
+b) Incomplete command. This means the command needs more arguments.
+c) The 'set' subcommand is listed. This means we have to use 'clock set'.
+d) The current time in hh:mm:ss format is requested. If the command is entered without the time, an incomplete command message is returned.
+e, f) I set the clock using 'clock set 15:00:00 31 Jan 2035'.
+Step 2
+cl[Tab] -> no information was returned
+clock -> Incomplete command.
+clock set 25:00:00 -> Invalid input at '^' marker (the marker is on 25).
+clock set 15:00:00 32 -> Invalid input at '^' marker (the marker is on 32).
