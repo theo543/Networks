@@ -1,0 +1,33 @@
+Part 1
+Step 2
+1)
+24 FastEthernet interfaces.
+2)
+2 Gigabit Ethernet interfaces.
+3)
+The vty lines range from 0 to 15.
+4)
+show startup-config
+5)
+Because the running-config hasn't been saved yet.
+
+Part 2
+Step 2
+The login command enables the password.
+Step 7
+The encrypted password is displayed.
+It looks different because it has been encrypted.
+Step 8
+Passwords will not be displayed in plain text anymore because they are automatically encrypted.
+
+Part 3
+Step 1
+The banner will be displayed whenever someone connects to the switch.
+Switches should have MOTD banners for legal reasons to warn unauthorized users to disconnect.
+
+Part 4
+Step 2
+cop r st
+Step 3
+show sta
+Yes, all changes entered are in the file (the passwords are encrypted).
