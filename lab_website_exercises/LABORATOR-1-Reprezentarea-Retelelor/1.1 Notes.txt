@@ -1,0 +1,21 @@
+Part 1
+Step 1
+c) The East router has USB, Console, AUX, and Ethernet cables, built-in to it. It also has a WAN interface card which provides two serial ports.
+Step 2
+a) There are two Ethernet ports and two serial ports, so the router should have four physical interfaces.
+b) The command listed four physical interfaces.
+c) GigabitEthernet 0/0 has 1000000 kilobit bandwidth. Serial 0/0/0 has 1544 kilobit bandwidth.
+Step 3
+a) The East router has one free slot for additional modules.
+b) Switch2 and Switch3 both have five free slots.
+
+Part 2
+Step 1
+a) The HWIC-4ESW can be used to connect the PCs to the router. Up to four hosts could be connected, since the module provides four switching ports.
+b) The PT-SWITCH-NM-1FGE can be used to provide a Gigabit Ethernet optical connection.
+Step 2
+a,b) I turned off the East router and added the module.
+c) I added the modules to the switches.
+d) The command shows a GigabitEthernet 5/1 interface. Since the slots start from zero, this is the sixth slot from the right.
+e) I added a HWIC-2T to the slot on the right to provide a serial connection, and covered the left slot.
+f) The command shows two new serial interfaces, in addition to the built-in Ethernet ones.
