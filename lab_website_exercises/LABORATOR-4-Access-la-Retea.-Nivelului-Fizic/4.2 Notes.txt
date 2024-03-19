@@ -1,0 +1,12 @@
+Part 5
+Step 1
+Two wires are connected to the switch - a copper straight-through cable and a coaxial cable.
+
+Step 2
+The Configuration Terminal is located on the table to the right of the blue rack.
+
+Step 3
+Because fiber connections have two cables for each device - one is used to send data in one direction, the other is used to send data in the other direction. This is called full duplex.
+
+Step 4
+Because people don't have cable racks at home, they just store the cables in some box or drawer.
