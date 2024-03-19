@@ -1,0 +1,11 @@
+INTERFACE| S1 Status | S1 Protocol | S2 Status | S2 Protocol |
+F0/1     | up        | up          | up        | up          |
+F0/6     | up        | up          | down      | down        |
+F0/18    | down      | down        | up        | up          |
+VLAN 1   | up        | up          | up        | up          |
+
+The ports which are down are not connected to anything.
+The switches are connected using ports F0/1 on each switch.
+One PC is connected to F0/6 on S1, and another on F0/18 on S2.
+
+A ping could fail if either PC had an issue with the connection to the switch, or if there was an issue with the connection between the switches.
