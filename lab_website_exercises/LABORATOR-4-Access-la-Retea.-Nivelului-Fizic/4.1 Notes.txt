@@ -1,0 +1,37 @@
+Part 1
+
+Step 1
+The router has USB, AUX, Console and Ethernet built-in ports.
+
+Step 2
+a)
+There are two serial interfaces from the WAN interface card and two Gigabit Ethernet interfaces.
+b)
+Four physical interfaces are listed - two serial interfaces and two Gigabit Ethernet interfaces.
+c)
+Gigabit Ethernet - 1000000 Kbit
+Serial - 1544 Kbit
+
+Step 3
+One free slot on the East router.
+Five free slots on Switch2, four of them are covered.
+
+Part 2
+
+Step 1
+a)
+A HWIC-4EWS module will provide 4 switching ports allowing up to 4 hosts to connect to the router.
+b)
+A PT-SWITCH-NM-1FGE will provide one Gigabit optical connection port.
+
+Step 2
+c)
+GigabitEthernet5/1 - this means the sixth slot (slots start at zero).
+
+Part 4
+
+Step 2
+DHCP was disabled. I had to enable it for the browser to work.
+
+Step 4
+They all had DHCP disabled. Enabled it.
