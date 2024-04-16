@@ -1,0 +1,24 @@
+Part 2
+Step 1
+c) Because the router needs to be configured first.
+Step 2
+n) The pings were successful.
+
+Part 3
+Step 1
+a)
+C indicates a directly connected network.
+There are two directly connected route entries.
+The C coded routes are associated with GigabitEthernet0/0/0 and GigabitEthernet0/0/1.
+Step 2
+a)
+GigabitEthernet0/0/1 is up.
+The MAC address is 0060.4731.8102
+The internet address is displayed as 192.168.1.1/24, so in decimal notation, with the prefix length
+
+Reflection Questions
+1.     If the G0/0/1 interface showed that it was administratively down, what interface configuration command would you use to bring the interface up?
+no shutdown
+2.     What would happen if you had incorrectly configured interface G0/0/1 on the router with an IP address of 192.168.1.2?
+There would be conflict with S1, also the default gateway of S1 and PC-A would be incorrect.
+PC-A would be unable to communicate with S1, the router, or hosts on external networks such as PC-B.
