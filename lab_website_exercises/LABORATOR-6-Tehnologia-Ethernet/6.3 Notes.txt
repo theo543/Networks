@@ -1,0 +1,69 @@
+Part 1
+Step 2
+e)
+There are ND PDUs present because the sender did not know the receiver's MAC address.
+ND PDUs are the IPv6 equivalent of ARP requests in IPv4.
+f)
+Message Type: 128
+g)
+The destination IP changed to a multicast address FF02::1:FF00:B
+The layer two addresses are the sender's MAC address and a multicast MAC address:
+0001.427E.E8ED > 3333.FF00.000B
+h)
+There is no change at Layer 2. The switch did not change the source and destination MAC addresses.
+i)
+Ethernet II DEST ADDR: 3333.FF00.000B
+Ethernet II SRC ADDR: 0040.0BD2.243E
+IPv6 SRC IP: 2001:DB8:ACAD:1::B
+IPv6 DEST IP: FF02::1:FF00:B
+j)
+Because RTA is not the target of the NS message, RTA does not respond.
+Because multicast is not routed across networks, RTA does not forward the message to the other network.
+Therefore, there is no output from RTA.
+l)
+Yes. The only information needed to communicate with a host on the local network is the destination IPv6 and MAC address.
+m)
+TYPE: 0x81
+o)
+Because 'Reset Simulation' did not clear PCA1's NDP cache, so it did not need to ask for the MAC address again.
+
+Part 2
+Step 1
+f)
+Src. IP: FE80::201:42FF:FE7E:E8ED (link-local)
+g)
+0001.961D.6301 (RTA, GE 0/0/0)
+i)
+The source and destination MAC addresses are missing. (because PCB1 needs to send a NS request to RTA)
+m)
+No.
+n)
+The destination MAC address corresponds to RTA (GE 0/0/1).
+PCB1 is using RTA's MAC address because PCA1 is not on the same network, so it needs to send the packet to the default gateway.
+
+Step 2
+b)
+Four addresses.
+They correspond to PCA1 and PCB2. Each device has a link-local and a global address.
+There are no entries for PCA2, because the router never needed to send a packet to it, so it never learned its MAC address.
+d)
+Yes. There is now one entry for PCA2, mapping its global address to its MAC address.
+
+Reflection Questions
+1.     When does a device require the IPv6 Neighbor Discovery process?
+When it wants to send a packet to a local host, but it does not know the MAC address corresponding to the destination IPv6 address.
+Or when it wants to send a packet to a remote host, but does not know the gateway's MAC address.
+2.     How does a router help to minimize the amount of IPv6 Neighbor Discovery traffic on a network?
+Like all IPv6 devices, routers keep a neighbor table to minimize ND traffic.
+Routers are also responsible for not forwarding multicast ND messages to other networks.
+3.     How does IPv6 minimize the impact of the ND process on network hosts?
+IPv6 ND uses special IPv6 and Ethernet multicast addresses called solicited-node multicast addresses.
+These addresses contain the last 24 bits (i.e. last 6 hex digits) of the destination IPv6 address.
+This allows IPv6 devices to automatically filter out most ND messages by checking the destination address.
+Since IPv6 addresses tend not to have identical last 24 bits, the chance of collision is low.
+This can be done in hardware, though in the Packet Tracer simulation, it seems to be done by the NDP process.
+Multicast filtering is also done by switches, via devices informing the switch of the multicast groups they are interested in
+(they are required to join their solicited-node multicast group, so they can reliably receive ND messages meant for them)
+1.     How does the Neighbor Discovery process differ when a destination host is on the same LAN and when it is on a remote LAN?
+When a destination host is on the same LAN, the Neighbor Discovery process is used to find its MAC address.
+Otherwise, the Neighbor Discovery process is used to find the default gateway's MAC address.
