@@ -1,0 +1,68 @@
+Part 1
+
+Step 1
+126 hosts in a /25 subnet
+80 hosts in total in the topology diagram
+6 subnets needed
+
+Step 2
+Largest: BR1 LAN
+40 hosts required
+/26 subnet mask
+62 host addresses in a /26 subnet
+Yes, subnet 192.168.33.128/25 into two /26 subnets
+Result:
+192.168.33.128/26 - allocated to BR1 LAN
+192.168.33.192/26
+
+Step 3
+Second largest: BR2 LAN
+25 hosts required
+/27 subnet mask
+30 host addresses in a /27 subnet
+Yes, subnet 192.168.33.192/26 into two /27 subnets
+Result:
+192.168.33.192/27 - allocated to BR2 LAN
+192.168.33.224/27
+
+Step 4
+Third largest: BR2 Iot LAN (Future)
+5 hosts required
+/29 subnet mask
+6 host addresses in a /29 subnet
+Yes, subnet 192.168.33.224/27 into four /29 subnets
+Result:
+192.168.33.224/29 - allocated to BR2 Iot LAN (Future)
+192.168.33.232/29 - allocated to BR2 CCTV LAN (Future)
+192.168.33.240/29 - allocated to BR2 HVAC C2LAN (Future)
+192.168.33.248/29
+
+Step 5
+Fourth largest: BR1-BR2 Link
+2 hosts required
+/30 subnet mask
+2 host addresses in a /30 subnet
+Yes, subnet 192.168.33.248/29 into two /30 subnets
+Result:
+192.168.33.248/30 - allocated to BR1-BR2 Link
+192.168.33.252/30 - unused
+
+Part 2
+Step 1
+Subnet Description | Number of Hosts Needed | Network Address /CIDR | First Host Address | Broadcast Address
+BR1 LAN            | 40                     | 192.168.33.128/26     | 192.168.33.129     | 192.168.33.191
+BR2 LAN            | 25                     | 192.168.33.192/27     | 192.168.33.193     | 192.168.33.223
+BR2 IoT LAN        | 5                      | 192.168.33.224/29     | 192.168.33.225     | 192.168.33.231
+BR2 CCTV LAN       | 4                      | 192.168.33.232/29     | 192.168.33.233     | 192.168.33.239
+BR2 HVAC C2LAN     | 4                      | 192.168.33.240/29     | 192.168.33.241     | 192.168.33.247
+BR1-BR2 Link       | 2                      | 192.168.33.248/30     | 192.168.33.249     | 192.168.33.251
+
+Device | Interface | IP Address     | Subnet Mask     | Device Interface
+BR1    | G0/0/0    | 192.168.33.249 | 255.255.255.252 | BR1-BR2 Link
+BR1    | G0/0/1    | 192.168.33.129 | 255.255.255.192 | 40 Host LAN
+BR2    | G0/0/0    | 192.168.33.250 | 255.255.255.252 | BR1-BR2 Link
+BR2    | G0/0/1    | 192.168.33.193 | 255.255.255.224 | 25 Host LAN
+
+Reflection Questions:
+Can you think of a shortcut for calculating the network addresses of consecutive /30 subnets?
+Since they will be 4 apart, just calculate the first network address, then add 4 repeatedly to get all the others.
