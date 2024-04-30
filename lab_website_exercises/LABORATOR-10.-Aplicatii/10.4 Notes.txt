@@ -1,0 +1,45 @@
+Part 1
+Step 1
+b.
+Destination | Average Round Trip Time (ms) | TTL / Hop Limit |
+192.168.1.10 | 4ms | 128 |
+2001:db8:acad:1::10 | 2ms | 128 |
+192.168.1.1 (R1) | 0ms | 255 |
+2001:db8:acad:1::1 (R1) | 0ms | 255 |
+192.168.1.2 (S1) | 0ms | 255 |
+2001:db8:acad:1::2(S1) | 0ms | 255 |
+64.100.0.2 (R1) | 0ms | 255 |
+2001:db8:acad::2 (R1) | 0ms | 255 | 
+64.100.0.1 (ISP) | 0ms | 254 |
+2001:db8:acad::1 (ISP) | 0ms | 254 |
+209.165.200.225 (ISP G0/0/1) | Destination Host Unreachable |
+2001:db8:acad:200::225 (ISP G0/0/1) | Request Timed Out |
+209.165.200.226 (External) | Destination Host Unreachable |
+2001:db8:acad:200::226 (External) | Request Timed Out |
+Step 2
+Note: I had to use a console cable to connect PC-A to S1, so that I could ping from S1.
+64.100.0.1 (ISP) responds.
+2001:db8:acad::1 (ISP) times out.
+209.165.200.225 (ISP G0/0/1) is unreachable.
+2001:db8:acad:200::225 (ISP G0/0/1) times out.
+209.165.200.226 (External) is unreachable.
+2001:db8:acad:200::226 (External) times out.
+Part 4
+g.
+Request timed out.
+
+Reflection Questions
+
+1.     What could prevent ping or traceroute responses from reaching the originating device beside network connectivity issues?
+
+Some firewalls block ICMP Destination Unreachable, ICMP Time Exceeded messages, and ICMP Echo Reply messages, blocking pings and traceroutes which come from outside the network.
+Additionally, routers may be configured to send unreachable and time exceeded messages, and hosts may be configured not to send reply messages, preventing ping and traceroute from working even inside the network.
+
+2.     If you ping a non-existent address on the remote network, such as 209.165.200.227, what is the message displayed by the ping command? What does this mean? If you ping a valid host address and receive this response, what should you check?
+Request timed out.
+It means no reply was received for the ping, not even an unreachable message.
+If you receive this response from a valid address, you should check if the destination host is down, if the ping is being blocked, if the host does not respond to pings, or if the intermediary devices are down or misconfigured
+
+3.     If you ping an address that does not exist in any network in your topology, such as 192.168.5.3, from a Windows-based PC, what is the message displayed by the ping command? What does this message indicate?
+Reply from 64.100.0.1: Destination host unreachable.
+It means a router in the path to the destination host has no route to the destination network, and sent back an ICMP Destination Unreachable message.
