@@ -1,0 +1,20 @@
+Part 2
+
+PC-A has no default gateway.
+
+Can't connect to the switch. SVI is likely misconfigured.
+Used a console cable to connect to switch and checked startup-config
+VLAN 1 interface is administratively down and default gateway does not match addressing table.
+Those issues can't affect connection speed, but should be fixed to not cause confusion in the future.
+Interface FE0/5 is set to half-duplex and speed is 10.
+This is likely the cause of the slow speed.
+
+There is no route to 209.165.200.226.
+The ISP should be the gateway of last resort.
+
+Part 4
+Configured PC-A default gateway.
+Fixed incorrect default gateway on switch.
+Enabled SVI on VLAN 1.
+Set connection to full duplex speed 100 from both switch and router.
+Set gateway of last resort to 10.1.1.2 on router.
