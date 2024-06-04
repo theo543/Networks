@@ -78,9 +78,9 @@ PAS 1
 
 156.234.54.10/22
 
-10011100.11101010.00110110.00001010
-11111111.11111111.11111100.00000000
-10011100.11101010.00110100.00000000
+I.P. = 10011100.11101010.00110110.00001010
+S.M. = 11111111.11111111.11111100.00000000
+N.A. = 10011100.11101010.00110100.00000000
 
 N.A.: 156.234.52.0/22
 B.A.: 156.234.55.255/22
@@ -235,7 +235,7 @@ Dacă e posibil, ar trebui să facem astfel încât pe ambele capete ale conexiu
 
 Când adăugam un host desktop, înlocuim modulul de Ethernet pre-instalat cu un modul CGE, pentru a avea Gigabit Ethernet.
 
-Pentru laptopuri conectate la Wi-Fi, înlocuim modulul Ethernet cu modulul WMP300N de Wi-Fi.
+Pentru laptopuri conectate la Wi-Fi, înlocuim modulul Ethernet cu modulul WPC300N de Wi-Fi.
 
 Pentru switch-uri 2960, nu sunt slot-uri de module, deci nu se schimbă nimic.
 
@@ -252,7 +252,7 @@ Absolut nicio configurație.
 Se va folosi pentru a accesa dispozitivele prin cablu consolă.
 
 Când se configurează routerul Wi-Fi, va trebui conectat prin cablu straight-through la routerul Wi-Fi.
-Nu se adaugă un modul WMP300N de conexiune Wi-Fi la laptopul SERVICE.
+Nu se adaugă un modul WPC300N de conexiune Wi-Fi la laptopul SERVICE.
 
 #### Configurarea unui PC
 
@@ -276,7 +276,7 @@ Ar trebui să primească un IP imediat după hostul cu IP static, dacă au fost 
 
 #### Configurarea unui Laptop Wi-Fi
 
-- Nu se adaugă modul CGE ca la PC, ci modulul WMP300N.
+- Nu se adaugă modul CGE ca la PC, ci modulul WPC300N.
 - Vor avea email.
 - IP-ul obținut prin DHCP, nu static ca la PC-uri.
 - Se vor numi "Laptop 1", "Laptop 2", etc.
@@ -324,6 +324,7 @@ Nu e voie cu meniul help (`?`) în CLI, te dă afară dacă vede că ai folosit 
 - `ip domain-name info.ro`
 - `crypto key generate rsa` - când cere mărimea, 2048
 - `username Admin01 privilege 15 secret Admin01pa55`
+- `ip ssh version 2`
 - `line console 0`
   - `password ciscoconpa55`
   - `login`
@@ -369,7 +370,7 @@ Nu la oferta de autoconfigurare care apare prima dată în CLI.
 - Ar trebui să fie deja dezactivate toate porturile nefolosite, implicit.
 - Securitate extra pentru routere:
   - `security passwords min-length 10`
-  - `login block-for 50 attempts 3 within 15
+  - `login block-for 50 attempts 3 within 15`
   - `banner login #Accesul neautorizat este strict interzis!#`
 - Rute statice:
   - Pentru fiecare rețea care nu e direct conectată, se va adăuga o rută statică.
@@ -414,9 +415,9 @@ Pentru configurare laptopuri, vezi [Configurarea unui Laptop Wi-Fi](#configurare
 
 #### Setup > Network Setup
 
-- IP Address = 192.168.20.49
-- Subnet Mask = 255.255.255.240
-- DHCP pornește de la 192.168.20.50
+- IP Address = 192.168.x.y (ceva aleatoriu, nu 0.1)
+- Subnet Mask = 255.255.255.240 (14 useri)
+- DHCP pornește de la N.A. + 1
 - Static DNS - IP-ul serverului DNS
 
 #### Wireless > Basic Wireless Settings
@@ -441,6 +442,7 @@ Ar trebui să testăm toată conectivitatea și serviciile pe care le-am configu
 
 - `ping` între toate dispozitivele. Orice ar trebui să poată face ping la orice altceva
   - cu excepția laptopurilor din rețeaua Wi-Fi care sunt în spatele NAT-ului, acelea nu pot primi conexiuni din exterior, dar ar trebui să poată face ping la orice, atât timp cât ele inițiază conexiunea
+  - routerul Wi-Fi nu va raspunde la pinguri pe WAN, deoarece e configurat să ignore ICMP care vine din exterior pe WAN. Ar trebui să răspundă la pinguri de la un laptop pe LAN-ul Wi-Fi.
   - `traceroute` / `tracert` (depinde dacă e Command Prompt sau Cisco IOS) poate ajuta la depanare dacă o conexiune nu merge.
 - `ssh` în toate dispozitivele care au SSH activat (routere și switch-uri).
   - Switch-urile trebuie să poată primi SSH din afara LAN-ului lor (dacă a fost uitat `ip default-gateway` nu va merge din afara LAN-ului).
