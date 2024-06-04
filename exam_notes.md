@@ -351,6 +351,8 @@ Nu e voie cu meniul help (`?`) în CLI, te dă afară dacă vede că ai folosit 
 
 #### Configurarea specifică routere
 
+Nu la oferta de autoconfigurare care apare prima dată în CLI.
+
 - Nu se configurează interfața VLAN ca la switch-uri.
 - Interfețele serial WAN și GigabitEthernet LAN (plus una GigabitEthernet WAN pentru Wi-Fi, dacă e cazul) se configurează:
   - `interface [nume interfață]`
