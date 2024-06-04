@@ -26,6 +26,7 @@
       - [Wireless \> Basic Wireless Settings](#wireless--basic-wireless-settings)
       - [Wireless \> Wireless Security](#wireless--wireless-security)
       - [Wireless \> Wireless MAC Filter](#wireless--wireless-mac-filter)
+  - [Testare](#testare)
 
 ## Cerințe
 
@@ -431,3 +432,25 @@ Pentru configurare laptopuri, vezi [Configurarea unui Laptop Wi-Fi](#configurare
 Enabled, și se adaugă adresele MAC ale laptopurilor Wi-Fi obținute prin `ipconfig /all` în Command Prompt, în mod whitelist (Permit PCs listed below to access wireless network).
 
 Vom lăsa cel puțin un laptop fără adresă MAC în whitelist, pentru a demonstra că filtrul funcționează.
+
+## Testare
+
+Ar trebui să testăm toată conectivitatea și serviciile pe care le-am configurat, pentru a găsi și repara probleme:
+
+- `ping` între toate dispozitivele. Orice ar trebui să poată face ping la orice altceva
+  - cu excepția laptopurilor din rețeaua Wi-Fi care sunt în spatele NAT-ului, acelea nu pot primi conexiuni din exterior, dar ar trebui să poată face ping la orice, atât timp cât ele inițiază conexiunea
+  - `traceroute` / `tracert` (depinde dacă e Command Prompt sau Cisco IOS) poate ajuta la depanare dacă o conexiune nu merge.
+- `ssh` în toate dispozitivele care au SSH activat (routere și switch-uri).
+  - Switch-urile trebuie să poată primi SSH din afara LAN-ului lor (dacă a fost uitat `ip default-gateway` nu va merge din afara LAN-ului).
+  - Trebuie să ceară parola userului Admin01 (nu parola ciscovtypa55).
+  - Trebui să afișeze banner MOTD și dacă e router login.
+- Conexiunea consolă trebuie să ceară parola de consolă, și enable trebuie să ceară parola de la enable secret.
+- Cele șase servicii configurate trebuie să funcționeze:
+  - Trebuie să se poată trimite și primi email între toate hosturile.
+  - Trebuie să se poate accesa FTP-ul, cu upload și download, de pe toate hosturile.
+  - DHCP trebuie să funcționeze din toate rețelele mai puțin cea cu serverul.
+    - Trebuie ca hostul de testare DHCP să primească un IP imediat după hostul cu IP static, nu unul rezervat pentru switch-uri.
+  - Trebuie să putem accesa info.ro de pe toate hosturile.
+    - DNS
+    - HTTP
+  - Serverul trebuie să primească syslog de la toate dispozitivele intermediare.
