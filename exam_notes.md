@@ -297,7 +297,7 @@ Ar trebui să primească un IP imediat după hostul cu IP static, dacă au fost 
     - Domain Name = info.ro
     - Pentru fiecare host, se va crea contul de email cu numele hostului, și parola 123456.
       Deci fiecare desktop PC (exceptând cel de testare DHCP), fiecare laptop, și serverul vor avea câte un cont de email.
-  - FTP va fi deja activat. Nu sunt sigur, cred că a zis ceva să punem un cont admin și guest? Nu prea îmi amintesc clar.
+  - FTP va fi deja activat. Trebuie creat un cont pentru fiecare host, la fel ca la email, cu permisiuni RWL (Read, Write, List).
 
 ### Dispozitive Intermediare (cu Cisco IOS)
 
