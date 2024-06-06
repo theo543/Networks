@@ -268,9 +268,9 @@ Nu se adaugă un modul WPC300N de conexiune Wi-Fi la laptopul SERVICE.
 
 #### Configurarea unui PC pentru testare DHCP
 
-Doar modulul CGE, fără IP static sau configurație de email.
+Fără modul CGE (modulul deja existent e suficient), fără IP static, și fără configurație de email.
 
-Când DHCP a fost configurat, setăm IP-ul pe hostul de testare DHCP la modul DHCP, și verificăm că primește corect IP-ul.
+Când DHCP pe router a fost configurat, setăm IP-ul pe hostul de testare DHCP la modul DHCP, și verificăm că primește corect IP-ul.
 
 Ar trebui să primească un IP imediat după hostul cu IP static, dacă au fost excluse corect adresele rezervate pentru switch-uri.
 
@@ -279,7 +279,7 @@ Ar trebui să primească un IP imediat după hostul cu IP static, dacă au fost 
 - Nu se adaugă modul CGE ca la PC, ci modulul WPC300N.
 - Vor avea email.
 - IP-ul obținut prin DHCP, nu static ca la PC-uri.
-- Se vor numi "Laptop 1", "Laptop 2", etc.
+- Se vor numi i.e. "WiFiBucurestiLaptop1", "WiFiBucurestiLaptop2", etc.
 - Obținem adresele MAC prin `ipconfig /all` în Command Prompt, vor fi necesare pentru a seta un whitelist pe routerul Wi-Fi.
 - Desktop > PC Wireless > Connect, refresh, conectare la rețeaua Wi-Fi, cu parola setată pe routerul Wi-Fi. DHCP va fi automat activat.
 
@@ -447,7 +447,7 @@ Ar trebui să testăm toată conectivitatea și serviciile pe care le-am configu
 - `ssh` în toate dispozitivele care au SSH activat (routere și switch-uri).
   - Switch-urile trebuie să poată primi SSH din afara LAN-ului lor (dacă a fost uitat `ip default-gateway` nu va merge din afara LAN-ului).
   - Trebuie să ceară parola userului Admin01 (nu parola ciscovtypa55).
-  - Trebui să afișeze banner MOTD și dacă e router login.
+  - Trebui să afișeze banner MOTD. Dacă e router, trebuie să fie și banner login.
 - Conexiunea consolă trebuie să ceară parola de consolă, și enable trebuie să ceară parola de la enable secret.
 - Cele șase servicii configurate trebuie să funcționeze:
   - Trebuie să se poată trimite și primi email între toate hosturile.
